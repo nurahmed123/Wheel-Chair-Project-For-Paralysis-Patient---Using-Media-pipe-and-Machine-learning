@@ -35,7 +35,7 @@ for oneport in port:
 
 # data = input("select port: /dev/cu.usbserial-")
 # url = "/dev/cu.usbserial-" + str(data)
-url = "/dev/cu.usbserial-120"
+url = "/dev/cu.usbserial-110"
 
 for x in range(0, len(portList)):
     if portList[x].startswith(url):
@@ -688,20 +688,20 @@ def draw_info_text(image, brect, handedness, hand_sign_text, finger_gesture_text
         send_lert_to_home()
         send_data_to_arduino("help")
         sendMessage = 1
-    if hand_sign_text == "stop" and sendMessage == 0:
-        send_data_to_arduino("stop")
+    if hand_sign_text == "Stop" and sendMessage == 0:
+        send_data_to_arduino("S")
         sendMessage = 1
     if hand_sign_text == "left" and sendMessage == 0:
-        send_data_to_arduino("left")
+        send_data_to_arduino("L")
         sendMessage = 1
     if hand_sign_text == "right" and sendMessage == 0:
-        send_data_to_arduino("right")
+        send_data_to_arduino("R")
         sendMessage = 1
     if hand_sign_text == "backward" and sendMessage == 0:
-        send_data_to_arduino("backward")
+        send_data_to_arduino("B")
         sendMessage = 1
     if hand_sign_text == "forward" and sendMessage == 0:
-        send_data_to_arduino("forward")
+        send_data_to_arduino("F")
         sendMessage = 1
     else:
         sendMessage = 0
